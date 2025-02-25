@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home</title>
+	<!-- EXTERNAL CSS -->
+	<link rel="stylesheet" type="text/css" href="./Home/style.css">
+	<!-- BOOTSTRAP -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<!-- FONT AWESOME -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+<!---------------------- 1ST CONTAINER ---------------------->
+<div class="container-fluid p-0 bg">
+    <div class="overlay">
+    	<div class="container">
+        	<div class="row">
+            	<div class="col-lg-12 col-md-12 col-sm-12">
+            		<div class="content-wrapper">
+            			<h1>EC Eligibility Assessment</h1>
+            			<p>
+            				Ready to explore your options for purchasing an Executive Condominium (EC)? You’re just a few questions away from discovering whether you qualify for an EC and if you’re eligible for a <strong>$30,000 grant </strong>to offset your purchase cost!
+            			</p>
+            			<div class="background-content">
+            				<div class="icon">
+            					<img src="https://janicez557.sg-host.com/wp-content/uploads/2025/02/idea-svgrepo-com.png">
+            				</div>
+            				<div class="content">
+            					<span>
+            					<strong>Important Note:</strong> This assessment is a mandatory step required by all developers to determine your eligibility, but rest assured, you are not obligated to make a purchase. Your responses will help us tailor the best options for your needs.
+            					</span>
+            				</div>
+            			</div>
+            			<a href="./registration">Start Your Assessment Now</a>
+            			<p class="hero-bonus">
+        					Complete the questionnaire now, and receive immediate results. Plus, as a bonus, you’ll gain exclusive access to download a list of the latest <strong>2025 new launch units</strong> freshly released by our partnering developers.
+            			</p>
+            		</div>
+            	</div>
+        	</div>
+		</div>
+    </div>
+</div>
+<!---------------------- 1ST CONTAINER END ---------------------->
+
+<div id="popup-container">
+    <div class="popup">
+        <div class="user-icon">
+            <img src="https://i.ibb.co/GfXy149N/pixelcut-export.png" alt="User Icon">
+        </div>
+        <div class="popup-content"></div>
+    </div>
+</div>
+
+<!-- Popup -->
+<script>
+    const names = [
+        "Emily Tan Wei Ling",
+        "Brandon Ng Jia Hao",
+        "Siti Nur Aisyah Binti Ahmad",
+        "Darren Lim Xin Rui",
+        "Nurul Izzati Binti Hassan",
+        "Rachel Wong Yi Xuan",
+        "Muhammad Faris Bin Zulkifli",
+        "Sophia Lee Mei Zhen",
+        "Hafiz Rahman Bin Ismail",
+        "Chloe Cheng Yu Xuan"
+    ];
+
+    let currentIndex = 0;
+
+    function showPopup() {
+        const popupContent = document.querySelector('.popup-content');
+        const name = names[currentIndex];
+        // Only show the name with 'submitted recently' text
+        popupContent.innerHTML = `${name}<br> just submitted recently`;
+
+        // Show the popup
+        const popup = document.querySelector('.popup');
+        popup.style.opacity = '1';
+
+        // Hide the popup after 5 seconds
+        setTimeout(() => {
+            popup.style.opacity = '0';
+            currentIndex = (currentIndex + 1) % names.length; // Move to the next name
+        }, 5000);
+    }
+
+    // Start showing popups every 10 seconds
+    setInterval(showPopup, 10000); // Every 10 seconds (5 seconds display + 5 seconds wait)
+
+    // Initial call to show the first popup immediately
+    showPopup();
+</script>
+
+</body>
+<!-- BOOTSTRAP -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</html>

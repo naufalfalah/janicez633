@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Registration</title>
+	<!-- EXTERNAL CSS -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- BOOTSTRAP -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<!-- FONT AWESOME -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+		integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+	<!---------------------- 1ST CONTAINER ---------------------->
+	<div class="container-fluid p-0">
+		<div class="row m-3">
+			<div class="col-lg-4 col-md-12 col-sm-12 mt-2 background">
+
+				<div class="tabs-wrapper">
+					<div class="container p-0" id="form-container">
+						<form action="../submit.php" id="myForm" method="post">	
+							<div id="step1">
+								<h2>Household Scheme</h2>
+								<p>Who will be included in your EC purchase?</p>
+									<div class="radio-group">
+										<label><input type="radio" name="option" value="Yourself + fiancé/fiancée"> Yourself
+											+ fiancé/fiancée</label>
+										<label><input type="radio" name="option" value="Yourself + spouse"> Yourself +
+											spouse</label>
+										<label><input type="radio" name="option" value="Yourself + parents"> Yourself +
+											parents</label>
+										<label><input type="radio" name="option"
+												value="Yourself + child under legal custody"> Yourself + child under legal
+											custody</label>
+										<label><input type="radio" name="option"
+												value="Yourself + up to 3 other singles (all 35 and above)"> Yourself + up
+											to 3 other singles (all 35 and above)</label>
+										<label><input type="radio" name="option" value="Yourself + orphaned sibling(s)">
+											Yourself + orphaned sibling(s)</label>
+									</div>
+									<button type="button" class="btn btn-primary" id="nextBtn1" onclick="showStep2()"
+										disabled>Next</button>
+							</div>
+
+							<div id="step2" style="display: none;">
+								<h2>Citizenship</h2>
+								<p>Does your household include a Singapore Citizen?</p>
+								<div class="radio-group">
+									<label><input type="radio" name="citizenship"
+											value="At least one Singapore Citizen and one PR"> Yes, at least one Singapore
+										Citizen and one Permanent Resident</label>
+									<label><input type="radio" name="citizenship" value="All others are PR or Citizen"> Yes,
+										at least one Singapore Citizen and all others are either Permanent Residents or
+										Citizens</label>
+									<label><input type="radio" name="citizenship" value="No Singapore Citizen or PR"> No, no
+										Singapore Citizens or Permanent Residents</label>
+								</div>
+								<button type="button" class="btn" onclick="showStep1()">Previous</button>
+								<button type="button" class="btn btn-primary" id="nextBtn2" onclick="showStep3()"
+									disabled>Next</button>
+							</div>
+
+							<div id="step3" style="display: none;">
+								<h2>Age Requirement</h2>
+								<p>Are you and/or your co-applicants of eligible age?</p>
+								<div class="radio-group">
+									<label><input type="radio" name="age" value="At least 21 years old"> Yes, I am at least
+										21 years old</label>
+									<label><input type="radio" name="age"
+											value="At least 35 years old (Joint Singles Scheme)"> Yes, I am at least 35
+										years old (applying under the Joint Singles Scheme)</label>
+									<label><input type="radio" name="age" value="No"> No</label>
+								</div>
+								<button type="button" class="btn" onclick="showStep2()">Previous</button>
+								<button type="button" class="btn btn-primary" id="nextBtn3" onclick="showStep4()"
+									disabled>Next</button>
+							</div>
+
+							<div id="step4" style="display: none;">
+								<h2>Monthly Household Income</h2>
+								<p>Is your combined household income below $16,000?</p>
+								<div class="radio-group">
+									<label><input type="radio" name="income" value="Yes"> Yes</label>
+									<label><input type="radio" name="income" value="No"> No</label>
+								</div>
+								<button type="button" class="btn" onclick="showStep3()">Previous</button>
+								<button type="button" class="btn btn-primary" id="nextBtn4" onclick="showStep5()" disabled>Next</button>
+							</div>
+
+							<div id="step5" style="display: none;">
+								<h2>HDB Ownership Status</h2>
+								<p>Do you or any co-applicants currently own an HDB flat that has completed the Minimum
+									Occupation Period (MOP)?</p>
+								<div class="radio-group">
+									<label><input type="radio" name="hdb" value="MOP completed"> Yes, MOP completed</label>
+									<label><input type="radio" name="hdb" value="Do not own any HDB"> No, do not own any
+										HDB</label>
+									<label><input type="radio" name="hdb" value="Still within MOP"> Yes, still within
+										MOP</label>
+								</div>
+								<button type="button" class="btn" onclick="showStep4()">Previous</button>
+								<button type="button" class="btn btn-primary" id="nextBtn5" onclick="showStep6()"
+									disabled>Next</button>
+							</div>
+
+							<div id="step6" style="display: none;">
+								<h2>Private Property Ownership in the Last 30 Months</h2>
+								<p>Have you or any co-applicants owned or disposed of any private property in the past 30
+									months?</p>
+								<div class="radio-group">
+									<label><input type="radio" name="private-property" value="Yes"> Yes</label>
+									<label><input type="radio" name="private-property" value="No"> No</label>
+								</div>
+								<button type="button" class="btn" onclick="showStep5()">Previous</button>
+								<button type="button" class="btn btn-primary" id="nextBtn6" onclick="showStep7()"
+									disabled>Next</button>
+							</div>
+
+
+							<div id="step7" style="display: none;">
+								<h2>First-Time Applicant</h2>
+								<p>Is this your first application for an HDB/EC property?</p>
+								<div class="radio-group">
+									<label><input type="radio" name="first-applications" value="Yes"> Yes</label>
+									<label><input type="radio" name="first-applications" value="No"> No</label>
+								</div>
+								<button type="button" class="btn" onclick="showStep6()">Previous</button>
+								<button type="button" class="btn btn-primary" id="nextBtn7" onclick="showStep8()"
+									disabled>Next</button>
+							</div>
+
+							<div id="step8" style="display: none;">
+								<h2>Personal Details</h2>
+								<p>Please enter your personal details.</p>
+								
+								<div class="form-group">
+									<label for="name">Full Name</label>
+									<input type="text" id="input_name" class="form-control" data-id="name" name="name" placeholder="Enter your full name" required>
+								</div>
+								
+								<div class="form-group">
+									<label for="phone">Phone Number</label>
+									<input type="tel" id="input_phone" class="form-control" data-id="phone" name="ph_number" placeholder="+65" maxlength="8" oninput="validatePhone()" required>
+									<small id="phone_error" style="color: red; display: none;">Phone number should start with 9 or 8 and must be 8 digits long.</small>
+								</div>
+								
+								<div class="form-group">
+									<label for="email">Email Address</label>
+									<input type="email" id="input_email" class="form-control" data-id="email" name="email" placeholder="Enter your email (e.g., user@example.com)" oninput="validateEmail()">
+									<small id="email_error" style="color: red; display: none;">Please enter a valid email address.</small>
+								</div>
+								
+								<button type="button" class="btn" onclick="showStep7()">Previous</button>
+								<button type="submit" class="btn btn-primary" id="submitBtn" onclick="submitForm()" disabled>Submit</button>
+							</div>
+						</form>	
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-8 col-md-12 col-sm-12 mt-2">
+				<img src="img-1.png" class="right-img">
+			</div>
+		</div>
+	</div>
+	<!---------------------- 1ST CONTAINER END ---------------------->
+
+	<div id="popup-container">
+		<div class="popup">
+			<div class="user-icon">
+				<img src="https://i.ibb.co/GfXy149N/pixelcut-export.png" alt="User Icon">
+			</div>
+			<div class="popup-content"></div>
+		</div>
+	</div>
+
+	<!-- BOOTSTRAP -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+	
+	<script>
+	
+		function hideAllSteps() {
+			document.querySelectorAll('[id^="step"]').forEach(step => {
+				step.style.display = 'none';
+			});
+		}
+	
+		function showStep1() {
+			hideAllSteps();
+			document.getElementById('step1').style.display = 'block';
+		}
+	
+		function showStep2() {
+			hideAllSteps();
+			document.getElementById('step2').style.display = 'block';
+		}
+	
+		function showStep3() {
+			hideAllSteps();
+			document.getElementById('step3').style.display = 'block';
+		}
+	
+		function showStep4() {
+			hideAllSteps();
+			document.getElementById('step4').style.display = 'block';
+		}
+	
+		function showStep5() {
+			hideAllSteps();
+			document.getElementById('step5').style.display = 'block';
+		}
+	
+		function showStep6() {
+			hideAllSteps();
+			document.getElementById('step6').style.display = 'block';
+		}
+	
+		function showStep7() {
+			hideAllSteps();
+			document.getElementById('step7').style.display = 'block';
+		}
+	
+		function showStep8() {
+			hideAllSteps();
+			document.getElementById('step8').style.display = 'block';
+		}
+	
+	
+	
+		document.querySelectorAll('input[name="option"]').forEach(radio => {
+			radio.addEventListener('change', () => {
+				document.getElementById('nextBtn1').disabled = false;
+			});
+		});
+	
+		document.querySelectorAll('input[name="citizenship"]').forEach(radio => {
+			radio.addEventListener('change', () => {
+				document.getElementById('nextBtn2').disabled = false;
+			});
+		});
+	
+		document.querySelectorAll('input[name="age"]').forEach(radio => {
+			radio.addEventListener('change', () => {
+				document.getElementById('nextBtn3').disabled = false;
+			});
+		});
+	
+		document.querySelectorAll('input[name="income"]').forEach(radio => {
+			radio.addEventListener('change', () => {
+				document.getElementById('nextBtn4').disabled = false;
+			});
+		});
+	
+		document.querySelectorAll('input[name="hdb"]').forEach(radio => {
+			radio.addEventListener('change', () => {
+				document.getElementById('nextBtn5').disabled = false;
+			});
+		});
+	
+		document.querySelectorAll('input[name="private-property"]').forEach(radio => {
+			radio.addEventListener('change', () => {
+				document.getElementById('nextBtn6').disabled = false;
+			});
+		});
+		document.querySelectorAll('input[name="private-property"]').forEach(radio => {
+			radio.addEventListener('change', () => {
+				document.getElementById('nextBtn7').disabled = false;
+			});
+		});
+	
+	
+		document.querySelectorAll('input[name="first-applications"]').forEach(radio => {
+		radio.addEventListener('change', () => {
+			document.getElementById('nextBtn7').disabled = false;
+		});
+	});
+	
+	
+	document.querySelectorAll('#step8 input').forEach(input => {
+		input.addEventListener('input', () => {
+			let name = document.getElementById('name').value.trim();
+			let email = document.getElementById('email').value.trim();
+			let address = document.getElementById('address').value.trim();
+			document.getElementById('submitBtn').disabled = !(name && email && address);
+		});
+	});
+	
+		function submitForm() {
+		//	window.location.replace('../thank-you/index.html')
+		//	alert('form Submited')
+		}
+	</script>
+	
+	<!-- SCRIPT FOR ACTIVE TABS BACKGROUND  -->
+	
+	<script>
+		document.querySelectorAll('.radio-group label').forEach(label => {
+			label.addEventListener('click', function () {
+				let parentGroup = this.closest('.radio-group');
+		
+				// Remove active class from all labels inside this radio group
+				parentGroup.querySelectorAll('label').forEach(lbl => lbl.classList.remove('active'));
+		
+				// Add active class to the clicked label
+				this.classList.add('active');
+		
+				// Enable next button
+				let step = this.closest('.container').id;
+				let nextBtn = step === "step1" ? "nextBtn1" : step === "step2" ? "nextBtn2" : "submitBtn";
+				document.getElementById(nextBtn).disabled = false;
+			});
+		});
+		
+		// Function to restore active class on back navigation
+		function restoreActiveClass() {
+			document.querySelectorAll('.radio-group input[type="radio"]').forEach(radio => {
+				if (radio.checked) {
+					let label = radio.closest('label');
+					if (label) {
+						label.classList.add('active');
+					}
+				}
+			});
+		}
+		
+		// Call restoreActiveClass() when going back
+		document.addEventListener("DOMContentLoaded", restoreActiveClass);
+	</script>
+	<script>
+		function validatePhone() {
+			let phoneInput = document.getElementById("input_phone");
+			let errorMsg = document.getElementById("phone_error");
+			let submitBtn = document.getElementById("submitBtn");
+			
+			let phonePattern = /^[89]\d{7}$/; // Starts with 8 or 9 and has 8 digits
+			
+			if (!phonePattern.test(phoneInput.value)) {
+				errorMsg.style.display = "block";
+				submitBtn.disabled = true;
+			} else {
+				errorMsg.style.display = "none";
+				submitBtn.disabled = false;
+			}
+		}
+		function validateEmail() {
+			let emailInput = document.getElementById("input_email");
+			let errorMsg = document.getElementById("email_error");
+			let submitBtn = document.getElementById("submitBtn");
+	
+			// Email validation pattern
+			let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+	
+			if (!emailPattern.test(emailInput.value)) {
+				errorMsg.style.display = "block";
+				submitBtn.disabled = true;
+			} else {
+				errorMsg.style.display = "none";
+				submitBtn.disabled = false;
+			}
+		}
+	</script>
+	
+	<!-- Popup -->
+	<script>
+		const names = [
+			"Emily Tan Wei Ling",
+			"Brandon Ng Jia Hao",
+			"Siti Nur Aisyah Binti Ahmad",
+			"Darren Lim Xin Rui",
+			"Nurul Izzati Binti Hassan",
+			"Rachel Wong Yi Xuan",
+			"Muhammad Faris Bin Zulkifli",
+			"Sophia Lee Mei Zhen",
+			"Hafiz Rahman Bin Ismail",
+			"Chloe Cheng Yu Xuan"
+		];
+	
+		let currentIndex = 0;
+	
+		function showPopup() {
+			const popupContent = document.querySelector('.popup-content');
+			const name = names[currentIndex];
+			// Only show the name with 'submitted recently' text
+			popupContent.innerHTML = `${name}<br> just submitted recently`;
+	
+			// Show the popup
+			const popup = document.querySelector('.popup');
+			popup.style.opacity = '1';
+	
+			// Hide the popup after 5 seconds
+			setTimeout(() => {
+				popup.style.opacity = '0';
+				currentIndex = (currentIndex + 1) % names.length; // Move to the next name
+			}, 5000);
+		}
+	
+		// Start showing popups every 10 seconds
+		setInterval(showPopup, 10000); // Every 10 seconds (5 seconds display + 5 seconds wait)
+	
+		// Initial call to show the first popup immediately
+		showPopup();
+	</script>
+
+</body>
+</html>

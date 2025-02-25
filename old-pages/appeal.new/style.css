@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Figtree:ital,wght@0,300..900;1,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-family: "Poppins", serif;
+}
+body{
+	margin: 20px !important;
+}
+a{
+	text-decoration: none !important;
+}
+
+/*Hero Section*/
+
+.bg{
+    background-image: url(bg.png);
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 0px 0px 0px 40px;
+    height: 100vh;
+}
+.overlay{
+	background-color: rgba(15, 47, 72, 0.5);
+    border-radius: 0px 0px 0px 40px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.light-bg{
+	background-color: #E5EDFC;
+	padding: 60px 120px 60px 120px;
+	border-radius: 0px 50px 0px 50px;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.light-bg p{
+	font-size: 16px;
+	font-weight: 400;
+	color: #334155;
+	text-align: center;
+	line-height: 32px;
+}
+.light-bg a{
+	background-color: #0F2F48;
+	font-weight: 500;
+	color: #E5EDFC;
+	font-size: 16px;
+	padding: 13px 30px;
+	border-radius: 3px;
+}
+.light-bg a:hover{
+	color: #E5EDFC;
+}
+.custom-top-image{
+	position: absolute;
+	top: 19%;
+	right: 17%;	
+}
+.custom-bottom-image{
+	position: absolute;
+	bottom: 12%;
+	left: 17%;	
+}
+
+/*TABLET QUERY*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+	.custom-top-image,.custom-bottom-image{
+		display: none;
+	}
+	.light-bg{
+		padding: 60px;
+	}
+
+}
+
+/*Mobile QUERY*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+	body{
+		margin: 0 !important;
+	}
+	.custom-top-image,.custom-bottom-image{
+		display: none;
+	}
+	.light-bg{
+		padding: 20px;
+	}
+	.light-bg p{
+		font-size: 14px;
+		line-height: 25px;
+	}
+	.light-bg a{
+		font-size: 14px;
+		padding: 10px 20px;
+		border-radius: 3px;
+	}
+	.webinar-section{
+		padding:30px 20px !important;
+	}
+}

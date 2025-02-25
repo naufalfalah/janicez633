@@ -1,0 +1,5 @@
+[20-Feb-2025 10:18:34 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/customer/www/janicez633.sg-host.com/public_html/submit.php:8
+Stack trace:
+#0 /home/customer/www/janicez633.sg-host.com/public_html/submit.php(8): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'jome_chatbot')
+#1 {main}
+  thrown in /home/customer/www/janicez633.sg-host.com/public_html/submit.php on line 8

@@ -23,28 +23,28 @@
 
 				<div class="tabs-wrapper">
 					<div class="container p-0" id="form-container">
-						<form action="../submit.php" id="myForm" method="post">	
+						<form action="../submit.php" id="myForm" method="POST">	
 							<div id="step1">
 								<h2>Household Scheme</h2>
 								<p>Who will be included in your EC purchase?</p>
-									<div class="radio-group">
-										<label><input type="radio" name="option" value="Yourself + fiancé/fiancée"> Yourself
-											+ fiancé/fiancée</label>
-										<label><input type="radio" name="option" value="Yourself + spouse"> Yourself +
-											spouse</label>
-										<label><input type="radio" name="option" value="Yourself + parents"> Yourself +
-											parents</label>
-										<label><input type="radio" name="option"
-												value="Yourself + child under legal custody"> Yourself + child under legal
-											custody</label>
-										<label><input type="radio" name="option"
-												value="Yourself + up to 3 other singles (all 35 and above)"> Yourself + up
-											to 3 other singles (all 35 and above)</label>
-										<label><input type="radio" name="option" value="Yourself + orphaned sibling(s)">
-											Yourself + orphaned sibling(s)</label>
-									</div>
-									<button type="button" class="btn btn-primary" id="nextBtn1" onclick="showStep2()"
-										disabled>Next</button>
+								<div class="radio-group">
+									<label><input type="radio" name="option" value="Yourself + fiancé/fiancée"> Yourself
+										+ fiancé/fiancée</label>
+									<label><input type="radio" name="option" value="Yourself + spouse"> Yourself +
+										spouse</label>
+									<label><input type="radio" name="option" value="Yourself + parents"> Yourself +
+										parents</label>
+									<label><input type="radio" name="option"
+											value="Yourself + child under legal custody"> Yourself + child under legal
+										custody</label>
+									<label><input type="radio" name="option"
+											value="Yourself + up to 3 other singles (all 35 and above)"> Yourself + up
+										to 3 other singles (all 35 and above)</label>
+									<label><input type="radio" name="option" value="Yourself + orphaned sibling(s)">
+										Yourself + orphaned sibling(s)</label>
+								</div>
+								<button type="button" class="btn btn-primary" id="nextBtn1" onclick="showStep2()"
+									disabled>Next</button>
 							</div>
 
 							<div id="step2" style="display: none;">
@@ -184,7 +184,6 @@
 		crossorigin="anonymous"></script>
 	
 	<script>
-	
 		function hideAllSteps() {
 			document.querySelectorAll('[id^="step"]').forEach(step => {
 				step.style.display = 'none';
@@ -229,9 +228,8 @@
 		function showStep8() {
 			hideAllSteps();
 			document.getElementById('step8').style.display = 'block';
+        	checkSubmit();
 		}
-	
-	
 	
 		document.querySelectorAll('input[name="option"]').forEach(radio => {
 			radio.addEventListener('change', () => {
@@ -268,32 +266,23 @@
 				document.getElementById('nextBtn6').disabled = false;
 			});
 		});
-		document.querySelectorAll('input[name="private-property"]').forEach(radio => {
+	
+		document.querySelectorAll('input[name="first-applications"]').forEach(radio => {
 			radio.addEventListener('change', () => {
 				document.getElementById('nextBtn7').disabled = false;
 			});
 		});
-	
-	
-		document.querySelectorAll('input[name="first-applications"]').forEach(radio => {
-		radio.addEventListener('change', () => {
-			document.getElementById('nextBtn7').disabled = false;
+		
+		
+		document.querySelectorAll('#step8 input').forEach(input => {
+			input.addEventListener('input', () => {
+	            checkSubmit();
+			});
 		});
-	});
-	
-	
-	document.querySelectorAll('#step8 input').forEach(input => {
-		input.addEventListener('input', () => {
-			let name = document.getElementById('name').value.trim();
-			let email = document.getElementById('email').value.trim();
-			let address = document.getElementById('address').value.trim();
-			document.getElementById('submitBtn').disabled = !(name && email && address);
-		});
-	});
-	
+		
 		function submitForm() {
-		//	window.location.replace('../thank-you/index.html')
-		//	alert('form Submited')
+			//	window.location.replace('../thank-you/index.html')
+			//	alert('form Submited')
 		}
 	</script>
 	
@@ -332,11 +321,21 @@
 		// Call restoreActiveClass() when going back
 		document.addEventListener("DOMContentLoaded", restoreActiveClass);
 	</script>
+
 	<script>
+		function checkSubmit() {
+			let name = document.getElementById('input_name').value.trim();
+			let phone = document.getElementById('input_phone').value.trim();
+			let email = document.getElementById('input_email').value.trim();
+			document.getElementById('submitBtn').disabled = !(name && phone && email);
+		}
+		
 		function validatePhone() {
 			let phoneInput = document.getElementById("input_phone");
 			let errorMsg = document.getElementById("phone_error");
 			let submitBtn = document.getElementById("submitBtn");
+
+			phoneInput.value = phoneInput.value.replace(/\D/g, '');
 			
 			let phonePattern = /^[89]\d{7}$/; // Starts with 8 or 9 and has 8 digits
 			
@@ -348,6 +347,7 @@
 				submitBtn.disabled = false;
 			}
 		}
+
 		function validateEmail() {
 			let emailInput = document.getElementById("input_email");
 			let errorMsg = document.getElementById("email_error");

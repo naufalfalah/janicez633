@@ -65,11 +65,11 @@ $conn->close();
 $msg = '';
 
 switch (true) {
-    case $citizenship === 'No, no Singapore Citizens or Permanent Residents' || 
+    case $citizenship === 'No, not Singapore Citizens or Permanent Residents' || 
         $requirement === 'No' || 
         $household_income === 'No' || 
         $private_property_ownership === 'Yes':
-        safe_redirect("discualification/");
+        safe_redirect("disqualification/");
         exit;
         // $msg = 'We have assessed your EC eligibility, and unfortunately, it seems you might not currently qualify for an EC purchase. However, based on your assessment, you might be eligible to seek an appeal. Our team will contact you to discuss the possibility of an appeal and guide you through the process. Meanwhile, here are the top 5 affordable condos for you to consider as alternatives. <a herf="#">View top 5 condos</a> 😊';
     case $ownership_status === 'Yes, MOP completed':

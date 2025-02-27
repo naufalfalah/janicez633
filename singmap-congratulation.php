@@ -303,7 +303,7 @@
 </head>
 <body>
     <!-- Original file listing content remains the same -->
-    <div class="timestamp">Generated Time: 22/02/2025 08:52:52 PM</div>
+    <div class="timestamp">Generated Time: <?= date('d/m/Y h:i:s A'); ?></div>
 
     <!-- File listing sections -->
     <div class="section">
@@ -498,112 +498,94 @@
     <script>
         const files = [
             { // 0
-                name: "#01-20",
-                subtitle: "The Arden 雅诗轩",
-                area: "1012",
+                name: "#02-12",
+                subtitle: "Novo Place",
+                area: "872",
                 bedroom: "3",
-                floor: "01",
-                district: "D23",
-                price: "$1854000 / $1832.02 psf"
+                floor: "02",
+                district: "D24",
+                price: "$1328000 / $1522.94 psf"
             },
             { // 1
-                name: "#24-15",
-                subtitle: "The Myst 秘林嘉园",
-                area: "1227",
+                name: "#02-14",
+                subtitle: "Lumina Grand 昱丰嘉园",
+                area: "936",
                 bedroom: "3",
-                floor: "24",
+                floor: "02",
                 district: "D23",
-                price: "$2325000 / $1894.87 psf"
+                price: "$1364000 / $1457.26 psf"
             },
             { // 2
-                name: "#02-30",
-                subtitle: "Kassia",
-                area: "1345",
-                bedroom: "4",
+                name: "#02-21",
+                subtitle: "Altura 雅乐轩",
+                area: "1539",
+                bedroom: "5",
                 floor: "02",
-                district: "D17",
-                price: "$2522000 / $1875.09 psf"
+                district: "D23",
+                price: "$2210000 / $1436 psf"
             },
             { // 3
-                name: "#13-11",
-                subtitle: "Skies Miltonia",
-                area: "2562",
-                bedroom: "",
-                floor: "13",
-                district: "D27",
-                price: "$2750000 / $1073,38 psf"
+                name: "#03-07",
+                subtitle: "Lumina Grand 昱丰嘉园",
+                area: "1496",
+                bedroom: "5",
+                floor: "02",
+                district: "D23",
+                price: "$2130000 / $1423,8 psf"
             },
             { // 4
-                name: "#01-33",
-                subtitle: "The Hill @ One North 鑫丰悦景",
-                area: "2971",
-                bedroom: "",
-                floor: "01",
-                district: "D05",
-                price: "$3354000 / $1128.91 psf"
+                name: "#14-34",
+                subtitle: "Aurelle Of Tampines 晶莹轩",
+                area: "840",
+                bedroom: "3",
+                floor: "14",
+                district: "D18",
+                price: "$0 / $0 psf"
             },
             { // 5
-                name: "#13-15",
-                subtitle: "Skies Miltonia",
-                area: "3025",
-                bedroom: "",
-                floor: "13",
-                district: "D27",
-                price: "$3100000 / $1024.79 psf"
+                name: "#02-05",
+                subtitle: "Novo Place",
+                area: "883",
+                bedroom: "3",
+                floor: "02",
+                district: "D24",
+                price: "$1379000 / $1561.72 psf"
             },
             { // 6
-                name: "#05-06",
-                subtitle: "The Arden 雅诗轩",
-                area: "1249",
-                bedroom: "3",
-                floor: "05",
-                district: "D23",
-                price: "$2022000 / $1618.9 psf"
+                name: "#01-30",
+                subtitle: "Aurelle Of Tampines 晶莹轩",
+                area: "1356",
+                bedroom: "5",
+                floor: "01",
+                district: "D18",
+                price: "$0 / $0 psf"
             },
             { // 7
-                name: "#24-03",
-                subtitle: "The Myst 秘林嘉园",
-                area: "1851",
-                bedroom: "4",
-                floor: "24",
-                district: "D23",
-                price: "$3381000 / $1826,58 psf"
+                name: "#01-12",
+                subtitle: "Novo Place",
+                area: "872",
+                bedroom: "3",
+                floor: "01",
+                district: "D24",
+                price: "$1333000 / $1528,67 psf"
             },
             { // 8
-                name: "#24-16",
-                subtitle: "The Myst 秘林嘉园",
-                area: "2034",
-                bedroom: "5",
-                floor: "24",
-                district: "D23",
-                price: "$3784000 / $1860.37 psf"
-            },
-            { // 9
-                name: "#05-03",
-                subtitle: "The Arden 雅诗轩",
-                area: "1410",
-                bedroom: "4",
-                floor: "05",
-                district: "D23",
-                price: "$2302000 / $1632.62 psf"
-            },
-            { // 10
-                name: "#05-03",
-                subtitle: "The Arden 雅诗轩",
-                area: "1410",
-                bedroom: "4",
-                floor: "05",
-                district: "D23",
-                price: "$2302000 / $1632.62 psf"
-            },
-            { // 11
                 name: "#01-10",
-                subtitle: "The Myst 秘林嘉园",
-                area: "1518",
-                bedroom: "4",
+                subtitle: "Lumina Grand 昱丰嘉园",
+                area: "936",
+                bedroom: "3",
                 floor: "01",
                 district: "D23",
-                price: "$2841000 / $1871.54 psf"
+                price: "$1382000 / $1476,5 psf"
+            },
+            { // 9
+                name: "#01-21",
+                subtitle: "Altura 雅乐轩",
+                area: "1539",
+                bedroom: "5",
+                floor: "01",
+                district: "D23",
+                price: "$2227000 / $1447,04 psf"
             },
         ];
 
@@ -631,36 +613,29 @@
             section1.innerHTML += createItem(files[0]);
             section1.innerHTML += createItem(files[1]);
             section1.innerHTML += createItem(files[2]);
-            section1.innerHTML += createItem(files[3]);
-            section1.innerHTML += createItem(files[4]);
             
             const section2 = document.getElementById("section-2");
-            section2.innerHTML += createItem(files[5]);
-            section2.innerHTML += createItem(files[4]);
-            section2.innerHTML += createItem(files[6]);
-            section2.innerHTML += createItem(files[7]);
+            section2.innerHTML += createItem(files[3]);
             section2.innerHTML += createItem(files[2]);
+            section2.innerHTML += createItem(files[0]);
             
             const section3 = document.getElementById("section-3");
+            section3.innerHTML += createItem(files[4]);
             section3.innerHTML += createItem(files[0]);
             section3.innerHTML += createItem(files[1]);
             section3.innerHTML += createItem(files[2]);
-            section3.innerHTML += createItem(files[3]);
-            section3.innerHTML += createItem(files[4]);
 
             const section4 = document.getElementById("section-4");
-            section4.innerHTML += createItem(files[5]);
-            section4.innerHTML += createItem(files[4]);
-            section4.innerHTML += createItem(files[8]);
-            section4.innerHTML += createItem(files[9]);
             section4.innerHTML += createItem(files[2]);
+            section4.innerHTML += createItem(files[3]);
+            section4.innerHTML += createItem(files[4]);
+            section4.innerHTML += createItem(files[5]);
 
             const section5 = document.getElementById("section-5");
-            section5.innerHTML += createItem(files[0]);
-            section5.innerHTML += createItem(files[11]);
-            section5.innerHTML += createItem(files[4]);
-            section5.innerHTML += createItem(files[2]);
-            section5.innerHTML += createItem(files[3]);
+            section5.innerHTML += createItem(files[6]);
+            section5.innerHTML += createItem(files[7]);
+            section5.innerHTML += createItem(files[8]);
+            section5.innerHTML += createItem(files[9]);
 
         });
 

@@ -108,7 +108,7 @@ border-radius: 8px 0px 0px 8px; /* Adjust rounded corners for right alignment */
     background: transparent;
     color: #0F2F48;
     border: 1px solid #0F2F48;
-    border-radius: 50px;
+    border-radius: 5px;
 }
 .content-box h4{
     font-size: 20px;
